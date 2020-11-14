@@ -1,0 +1,17 @@
+{
+  "name": "calendar-search",
+  "version": "0.1.0",
+  "description": "Experimental calendar search",
+  "license": "MIT",
+  "author": "Theo Beers",
+  "main": "./js/calendar.js",
+  "scripts": {
+    "minify": "terser ./js/calendar.js --mangle --source-map --output ./js/calendar.min.js",
+    "standardize": "standard --fix ./js/calendar.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "standard": "^16.0.2",
+    "terser": "^5.3.8"
+  }
+}
