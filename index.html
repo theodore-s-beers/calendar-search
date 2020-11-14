@@ -53,68 +53,6 @@
   <body>
     <div class="container" style="display: none">
       <h1>Calendar Converter for Near East Historians</h1>
-      <p>
-        This is a simple calendar conversion utility that displays a given date
-        according to five different standards:
-        <a
-          href="https://en.wikipedia.org/wiki/Gregorian_calendar"
-          rel="noopener"
-          target="_blank"
-          >Gregorian</a
-        >,
-        <a
-          href="https://en.wikipedia.org/wiki/Julian_calendar"
-          rel="noopener"
-          target="_blank"
-          >Julian</a
-        >,
-        <a
-          href="https://en.wikipedia.org/wiki/Hebrew_calendar"
-          rel="noopener"
-          target="_blank"
-          >Hebrew</a
-        >,
-        <a
-          href="https://en.wikipedia.org/wiki/Islamic_calendar"
-          rel="noopener"
-          target="_blank"
-          >Islamic</a
-        >, and Persian (<em>i.e.</em>,
-        <a
-          href="https://en.wikipedia.org/wiki/Solar_Hijri_calendar"
-          rel="noopener"
-          target="_blank"
-          >Solar Hijri</a
-        >). Change the date in any of the tables below, then click the
-        corresponding “Calculate” button, and the equivalent date will appear in
-        the other four calendars. In the Hebrew case, the year is also listed
-        according to the
-        <a
-          href="https://en.wikipedia.org/wiki/Seleucid_era"
-          rel="noopener"
-          target="_blank"
-          >Seleucid era</a
-        >. For the benefit of historians of the later medieval and early modern
-        Persianate world, this page further indicates the
-        <em>animal year</em> in which the given date falls. (See the “Notes and
-        References” section below for further discussion of such arcane points.)
-      </p>
-      <p>
-        The core of this project was adapted from the more extensive work of
-        <a href="https://www.fourmilab.ch/" rel="noopener" target="_blank"
-          >John Walker</a
-        >. I encourage you to spend some time exploring his
-        <a
-          href="https://www.fourmilab.ch/documents/calendar/"
-          rel="noopener"
-          target="_blank"
-          >calendar page</a
-        >
-        and the underlying code, which he has graciously placed in the public
-        domain.
-      </p>
-      <hr />
-      <h2>Gregorian Calendar</h2>
       <form
         action="JavaScript:calcGregorian();"
         id="gregorian"
@@ -200,7 +138,6 @@
           </tr>
         </table>
       </form>
-      <h2>Julian Calendar</h2>
       <form
         action="JavaScript:calcJulianCalendar();"
         id="juliancalendar"
@@ -274,7 +211,6 @@
           </tr>
         </table>
       </form>
-      <h2>Hebrew Calendar</h2>
       <form action="JavaScript:calcHebrew();" id="hebrew" name="hebrew">
         <table
           class="table table-bordered table-sm"
@@ -344,7 +280,6 @@
           </p>
         </div>
       </div>
-      <h2>Islamic Calendar</h2>
       <form action="JavaScript:calcIslamic();" id="islamic" name="islamic">
         <table
           class="table table-bordered table-sm"
@@ -418,7 +353,6 @@
           </tr>
         </table>
       </form>
-      <h2>Persian (Solar Hijri) Calendar</h2>
       <form action="JavaScript:calcPersiana();" id="persiana" name="persiana">
         <table
           class="table table-bordered table-sm"
@@ -500,193 +434,6 @@
           </p>
         </div>
       </div>
-      <hr />
-      <div data-children=".item" id="notes-accordion">
-        <div class="item">
-          <a
-            aria-controls="notes"
-            aria-expanded="false"
-            data-parent="#notes-accordion"
-            data-toggle="collapse"
-            href="#notes"
-            ><h2>Notes and References</h2></a
-          >
-          <div class="collapse" id="notes" role="tabpanel">
-            <ul>
-              <li>
-                Calendrical problems can be notoriously difficult for historians
-                to resolve. After all, a calendar is no better than the way in
-                which it has been observed by particular institutions, or the
-                scrupulousness with which dates are recorded in the source
-                materials available to us. With this in mind, a conversion
-                program based on the formal rules of the included calendars is
-                unlikely to answer all questions. The idea is to provide
-                accurate calculations assuming ideal circumstances.
-              </li>
-              <li>
-                If you find that a certain date appears to have been converted
-                incorrectly on this page, please let me know
-                <a href="mailto:tbeers@uchicago.edu">by email</a>. (This would
-                come as a surprise. I’ve relied on the algorithms coded by John
-                Walker for years, with nary a problem.)
-              </li>
-              <li>
-                In the Hebrew calendar widget, the months are listed starting
-                with Nisan, but each new year begins with Tishrei. This is
-                simply a point of convention. With regard to the Seleucid era, I
-                have followed the method of subtracting 3,449 from
-                <em>anno mundi</em>. That is, Seleucid year 1 opens with the
-                month of Tishrei in 3450 AM, or September 312 BCE in the Julian
-                calendar. If I have understood correctly, this was the
-                predominant way of reckoning the Seleucid era in Jewish
-                contexts. See the
-                <a
-                  href="https://iranicaonline.org/articles/seleucid-era"
-                  rel="noopener"
-                  target="_blank"
-                  >Encyclopædia Iranica</a
-                >
-                entry for a bit more background discussion.
-              </li>
-              <li>
-                In several of the Arab countries that use the Gregorian calendar
-                for civil purposes, a different
-                <a
-                  href="https://en.wikipedia.org/wiki/Arabic_names_of_calendar_months"
-                  rel="noopener"
-                  target="_blank"
-                  >set of names</a
-                >
-                is applied to the twelve months. Similarly, the Solar Hijri
-                calendar is followed in Afghanistan, but with
-                <a
-                  href="https://en.wikipedia.org/wiki/Solar_Hijri_calendar#In_Afghanistan"
-                  rel="noopener"
-                  target="_blank"
-                  >month names</a
-                >
-                drawn from the Arabic zodiac signs, rather than from Middle
-                Persian (as in the Iranian version shown above). And there is
-                yet another naming convention in Pashto!
-              </li>
-              <li>
-                It should be noted that the Persian calendar included above is
-                the version adopted in Iran in 1925, as a modernization of the
-                <a
-                  href="https://en.wikipedia.org/wiki/Jalali_calendar"
-                  rel="noopener"
-                  target="_blank"
-                  >Jalali calendar</a
-                >
-                (which dated back to 1079 CE but had not been used consistently
-                in the intervening eras). Why would this recent standard be
-                helpful for history before the twentieth century? The key point
-                is that communities in Greater Iran have, since ancient times,
-                treated the March equinox as the beginning of a new
-                year&#8202;—&#8202;<em>i.e.</em>, the festival of
-                <a
-                  href="https://en.wikipedia.org/wiki/Nowruz"
-                  rel="noopener"
-                  target="_blank"
-                  >Nowruz</a
-                >. This practice is formalized in the Solar Hijri calendar, with
-                the first day of the year, 1 Farvardin, occurring at the March
-                equinox as observed from central Iran (52.5 degrees east
-                meridian). We can therefore use the modern calendar
-                <a
-                  href="https://en.wiktionary.org/wiki/proleptic"
-                  rel="noopener"
-                  target="_blank"
-                  >proleptically</a
-                >
-                for calculations involving <em>years</em> in earlier periods of
-                Iranian history. The practical significance of this will become
-                clear in the following note…
-              </li>
-              <li>
-                Most people are likely familiar with the
-                <a
-                  href="https://en.wikipedia.org/wiki/Chinese_zodiac"
-                  rel="noopener"
-                  target="_blank"
-                  >Chinese zodiac</a
-                >
-                system, in which each year is associated with an animal sign in
-                a repeating twelve-year cycle. The traditional Chinese calendar
-                is lunisolar, and the year begins with a new moon that may occur
-                between 21 January and 20 February (Gregorian). Variants of this
-                scheme have been followed, and in many cases continue to be
-                used, in countries across Asia. During the Mongol period, the
-                practice of classifying years with animals was brought to Iran,
-                and, for a time, some authors of astronomical and historical
-                works <em>in Persian</em> used the Chinese calendar directly as
-                a way of dating events. The animal signs themselves became a
-                lasting part of Persianate culture, except that there was (quite
-                naturally) a shift toward setting the transition point between
-                years at the March equinox. This convention took on importance
-                in the historiography of the Timurid and Safavid
-                periods&#8202;—&#8202;especially the latter. In several key
-                Safavid Persian chronicles, insofar as an annalistic format is
-                employed, each year-section begins at Nowruz and is labeled with
-                the corresponding animal. (Months and days are given in the
-                Islamic calendar only.) It is clear that authors of the time had
-                some difficulty maintaining concordance between the solar and
-                lunar schemes that they used; and this has occasionally led to
-                confusion among modern historians. But that is a topic best left
-                for another conversation. Returning to the matter of the Solar
-                Hijri calendar, we have an accurate way of tracking the passage
-                of solar years in Iran from one March equinox to the next, and
-                so we need only a bit of modular arithmetic to calculate the
-                animal sign associated with any date.
-              </li>
-              <li>
-                For more on the use of the twelve-animal cycle in Persian, see
-                <a href="files/melville.pdf" rel="noopener" target="_blank"
-                  >this journal article</a
-                >
-                by Charles Melville (of Cambridge University), and
-                <a href="files/mcchesney.pdf" rel="noopener" target="_blank"
-                  >this one</a
-                >
-                by Robert D. McChesney (of NYU).
-              </li>
-              <li>
-                It may go without saying, but users of this program should
-                exercise care when interpreting results, in proportion to the
-                degree of precision that is required, and with particular
-                sensitivity to breakpoints. If, for example, you were studying
-                an event in Safavid history that took place within a few days of
-                the March equinox, it could be difficult to determine which
-                animal year was in effect, since the actual observance of Nowruz
-                varied slightly based on a number of factors. But I hope you
-                will find, as I have, that formally correct conversion of dates
-                is more than adequate in almost all cases.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <p>
-        &copy; 2018&#8202;–20
-        <a href="https://www.theobeers.com/" rel="noopener" target="_blank"
-          >T. S. Beers</a
-        ><br />The files relating to this page are available
-        <a
-          href="https://github.com/theodore-s-beers/calendars/"
-          rel="noopener"
-          target="_blank"
-          >on GitHub</a
-        >
-        under the
-        <a
-          href="https://en.wikipedia.org/wiki/MIT_License"
-          rel="noopener"
-          target="_blank"
-          >MIT License</a
-        >.<br />I’m not much of a developer. If anything is messed up, please
-        let me know <a href="mailto:tbeers@uchicago.edu">by email</a>!
-      </p>
     </div>
     <div class="container" style="margin-top: 0.6rem">
       <h5>For the following date in the Islamic calendar…</h5>
