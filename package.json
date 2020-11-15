@@ -2,6 +2,7 @@
   "name": "calendar-search",
   "version": "0.1.0",
   "description": "Experimental calendar search",
+  "repository": "github:theodore-s-beers/calendar-search",
   "license": "MIT",
   "author": "Theo Beers",
   "main": "./js/calendar.js",
