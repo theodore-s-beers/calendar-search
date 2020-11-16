@@ -15,19 +15,24 @@
     <link rel="icon" href="#" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <style>
+      body {
+        max-width: 860px;
+        margin: auto;
+      }
       h1 {
         font-size: 210%;
       }
       h5 {
         font-size: 115%;
       }
-      p {
+      p,
+      li {
         hyphens: auto;
       }
     </style>
   </head>
   <body>
-    <div class="container" style="margin-top: 0.6rem">
+    <div class="container" style="margin-top: 0.6rem; margin-bottom: 1.5rem">
       <h1>Experimental calendar search</h1>
       <div style="display: none">
         <form
@@ -35,25 +40,17 @@
           id="gregorian"
           name="gregorian"
         >
-          <table
-            class="table table-bordered table-sm"
-            style="max-width: 36rem; text-align: center"
-          >
+          <table>
             <tr>
               <td>
                 <input
                   aria-label="Gregorian year"
                   id="greg-year"
                   name="year"
-                  style="width: 5.5em"
                   type="number"
                   value="1998"
                 />
-                <select
-                  aria-label="Gregorian month"
-                  name="month"
-                  style="width: 8em"
-                >
+                <select aria-label="Gregorian month" name="month">
                   <option value="1">January</option>
                   <option value="2">February</option>
                   <option value="3">March</option>
@@ -73,14 +70,12 @@
                   max="31"
                   min="1"
                   name="day"
-                  style="width: 4.25em"
                   type="number"
                   value="1"
                 /><br /><input
                   aria-label="Normal or leap year"
                   name="leap"
                   readonly="readonly"
-                  style="margin-top: 0.25em; color: #228b22; width: 9.1em"
                   type="text"
                   value=""
                 />
@@ -88,7 +83,6 @@
                   aria-label="Weekday"
                   name="wday"
                   readonly="readonly"
-                  style="color: #228b22; width: 9em"
                   type="text"
                   value=""
                 />
@@ -97,7 +91,6 @@
             <tr>
               <td>
                 <input
-                  class="btn btn-primary"
                   id="greg-calc-btn"
                   onclick="calcGregorian();"
                   type="submit"
@@ -105,7 +98,6 @@
                 />
                 &ensp;
                 <input
-                  class="btn btn-secondary"
                   id="greg-today-btn"
                   onclick="setDateToToday();calcGregorian();"
                   type="button"
@@ -120,25 +112,17 @@
           id="juliancalendar"
           name="juliancalendar"
         >
-          <table
-            class="table table-bordered table-sm"
-            style="max-width: 36rem; text-align: center"
-          >
+          <table>
             <tr>
               <td>
                 <input
                   aria-label="Julian year"
                   id="julian-year"
                   name="year"
-                  style="width: 5.5em"
                   type="number"
                   value=""
                 />
-                <select
-                  aria-label="Julian month"
-                  name="month"
-                  style="width: 8em"
-                >
+                <select aria-label="Julian month" name="month">
                   <option value="1">January</option>
                   <option value="2">February</option>
                   <option value="3">March</option>
@@ -158,14 +142,12 @@
                   max="31"
                   min="1"
                   name="day"
-                  style="width: 4.25em"
                   type="number"
                   value=""
                 /><br /><input
                   aria-label="Normal or leap year"
                   name="leap"
                   readonly="readonly"
-                  style="margin-top: 0.25em; color: #228b22; width: 9.1em"
                   type="text"
                   value=""
                 />
@@ -173,7 +155,6 @@
                   aria-label="Weekday"
                   name="wday"
                   readonly="readonly"
-                  style="color: #228b22; width: 9em"
                   type="text"
                   value=""
                 />
@@ -182,7 +163,6 @@
             <tr>
               <td>
                 <input
-                  class="btn btn-primary"
                   id="julian-btn"
                   onclick="calcJulianCalendar();"
                   type="submit"
@@ -193,10 +173,7 @@
           </table>
         </form>
         <form action="JavaScript:calcHebrew();" id="hebrew" name="hebrew">
-          <table
-            class="table table-bordered table-sm"
-            style="max-width: 36rem; text-align: center"
-          >
+          <table>
             <tr>
               <td>
                 <input
@@ -205,13 +182,8 @@
                   id="heb-year"
                   type="number"
                   value=""
-                  style="width: 5.5em"
                 />
-                <select
-                  name="month"
-                  aria-label="Hebrew month"
-                  style="width: 8em"
-                >
+                <select name="month" aria-label="Hebrew month">
                   <option label="Nisan" value="1"></option>
                   <option label="Iyar" value="2"></option>
                   <option label="Sivan" value="3"></option>
@@ -233,14 +205,12 @@
                   min="1"
                   type="number"
                   value=""
-                  style="width: 4.25em"
                 /><br /><input
                   aria-label="Type of year"
                   name="leap"
                   readonly="readonly"
                   type="text"
                   value=""
-                  style="margin-top: 0.25em; color: #228b22; width: 18.3em"
                 />
               </td>
             </tr>
@@ -249,7 +219,6 @@
                 <input
                   onclick="calcHebrew();"
                   value="Calculate"
-                  class="btn btn-primary"
                   type="submit"
                   id="hebrew-btn"
                 />
@@ -257,34 +226,18 @@
             </tr>
           </table>
         </form>
-        <div class="card border-info mb-3" style="max-width: 36rem">
-          <div class="card-body text-info">
-            <p class="card-text" id="seleucid-answer">
-              In the Seleucid era, as used by some medieval Jewish communities,
-              this is year …
-            </p>
-          </div>
-        </div>
         <form action="JavaScript:calcIslamic();" id="islamic" name="islamic">
-          <table
-            class="table table-bordered table-sm"
-            style="max-width: 36rem; text-align: center"
-          >
+          <table>
             <tr>
               <td>
                 <input
                   aria-label="Islamic year"
                   id="islamic-year"
                   name="year"
-                  style="width: 5.5em"
                   type="number"
                   value=""
                 />
-                <select
-                  aria-label="Islamic month"
-                  name="month"
-                  style="width: 9.5em"
-                >
+                <select aria-label="Islamic month" name="month">
                   <option value="1">Muharram</option>
                   <option value="2">Safar</option>
                   <option value="3">Rabi‘ I</option>
@@ -304,14 +257,12 @@
                   max="30"
                   min="1"
                   name="day"
-                  style="width: 4.25em"
                   type="number"
                   value=""
                 /><br /><input
                   aria-label="Normal or leap year"
                   name="leap"
                   readonly="readonly"
-                  style="margin-top: 0.25em; color: #228b22; width: 8.8em"
                   type="text"
                   value=""
                 />
@@ -319,7 +270,6 @@
                   aria-label="Arabic weekday"
                   name="wday"
                   readonly="readonly"
-                  style="color: #228b22; width: 10.8em"
                   type="text"
                   value=""
                 />
@@ -328,7 +278,6 @@
             <tr>
               <td>
                 <input
-                  class="btn btn-primary"
                   id="islamic-btn"
                   onclick="calcIslamic();"
                   type="submit"
@@ -339,25 +288,17 @@
           </table>
         </form>
         <form action="JavaScript:calcPersiana();" id="persiana" name="persiana">
-          <table
-            class="table table-bordered table-sm"
-            style="max-width: 36rem; text-align: center"
-          >
+          <table>
             <tr>
               <td>
                 <input
                   aria-label="Persian year"
                   id="pers-year"
                   name="year"
-                  style="width: 5.5em"
                   type="number"
                   value=""
                 />
-                <select
-                  aria-label="Persian month"
-                  name="month"
-                  style="width: 9em"
-                >
+                <select aria-label="Persian month" name="month">
                   <option value="1">Farvardin</option>
                   <option value="2">Ordibehesht</option>
                   <option value="3">Khordad</option>
@@ -377,14 +318,12 @@
                   max="31"
                   min="1"
                   name="day"
-                  style="width: 4.25em"
                   type="number"
                   value=""
                 /><br /><input
                   aria-label="Normal or leap year"
                   name="leap"
                   readonly="readonly"
-                  style="margin-top: 0.25em; color: #228b22; width: 8.9em"
                   type="text"
                   value=""
                 />
@@ -392,7 +331,6 @@
                   aria-label="Persian weekday"
                   name="wday"
                   readonly="readonly"
-                  style="color: #228b22; width: 10.2em"
                   type="text"
                   value=""
                 />
@@ -401,7 +339,6 @@
             <tr>
               <td>
                 <input
-                  class="btn btn-primary"
                   id="pers-btn"
                   onclick="calcPersiana();"
                   type="submit"
@@ -411,17 +348,9 @@
             </tr>
           </table>
         </form>
-        <div class="card border-info mb-3" style="max-width: 36rem">
-          <div class="card-body text-info">
-            <p class="card-text" id="animal-answer">
-              In the Persianate adaptation of the Chinese-Uighur animal
-              calendar, this date falls in a year of the …
-            </p>
-          </div>
-        </div>
       </div>
       <h5>For the following date in the Islamic calendar…</h5>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="new-select-month">Month</label>
         <select class="form-control" id="new-select-month" style="width: 10rem">
           <option value="1">Muharram</option>
@@ -439,20 +368,20 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="new-select-day">Day</label>
+        <label for="new-select-day">Day (1–30)</label>
         <input
           type="number"
           class="form-control"
           id="new-select-day"
           max="30"
           min="1"
-          value="1"
+          value=""
           style="width: 5rem"
         />
       </div>
       <h5>In the following <em>inclusive</em> range of years (AH)…</h5>
-      <div class="form-group">
-        <label for="new-select-start-year">Start year</label>
+      <div class="form-group mb-2">
+        <label for="new-select-start-year">Start year (100–1400)</label>
         <input
           type="number"
           class="form-control"
@@ -464,7 +393,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="new-select-end-year">End year</label>
+        <label for="new-select-end-year">End year (100–1400)</label>
         <input
           type="number"
           class="form-control"
@@ -476,7 +405,7 @@
         />
       </div>
       <h5>
-        Return the years in which that date is calculated as occurring on the
+        Return years in which that date is calculated as occurring on the
         following day of the week…
       </h5>
       <div class="form-group">
@@ -495,15 +424,53 @@
           <option>Friday</option>
         </select>
       </div>
-      <button type="button" class="btn btn-primary mb-3" id="new-submit-button">
-        Submit
+      <button
+        type="button"
+        class="btn btn-primary mb-1 mr-3"
+        id="new-submit-button"
+      >
+        Submit</button
+      ><button
+        type="button"
+        class="btn btn-secondary mb-1"
+        id="new-reset-button"
+      >
+        Clear
       </button>
-      <div class="card border-success mb-3" style="max-width: 18rem">
+      <hr />
+      <div class="card border-success" style="max-width: 24rem">
         <div class="card-body text-success">
           <h5 class="card-title">Results</h5>
           <p class="card-text" id="new-results-text">…</p>
         </div>
       </div>
+      <hr />
+      <h4>Caveats</h4>
+      <ul class="list-group">
+        <li class="list-group-item">
+          This is based on standard algorithmic date calculation/conversion. It
+          should be accurate, as far as such things go; but the user is advised
+          to allow a margin of plus or minus one day, <em>particularly</em> with
+          regard to the weekday associated with a given date. If, for example,
+          you're looking for years in which 5 Rajab fell on a Thursday, you
+          should probably run queries for Wednesday and Friday, as well.
+        </li>
+        <li class="list-group-item">
+          Yes, the number of positive results will increase due to the margin of
+          error. I'm not really sure how valuable this tool will be. But if
+          you're working with a source that mentions a month, day, and weekday
+          for an event, and you're trying to identify possible years from a
+          range that isn't too large, it <em>can</em> be helpful to know which
+          options fit best.
+        </li>
+        <li class="list-group-item">
+          Please note that the difference between the start and end years cannot
+          exceed 300. (Technically, since the range is treated inclusively, the
+          maximum number of years that can be searched at once is 301.) I wanted
+          to set some reasonable limit, due to the incredibly inefficient way in
+          which the script has been implemented.
+        </li>
+      </ul>
     </div>
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -520,20 +487,8 @@
         presetDataToRequest(location.search.substring(1));
       }
     </script>
-    <script src="js/extras.js"></script>
     <script>
-      document
-        .getElementById("greg-calc-btn")
-        .addEventListener("click", extras);
-      document
-        .getElementById("greg-today-btn")
-        .addEventListener("click", extras);
-      document.getElementById("julian-btn").addEventListener("click", extras);
-      document.getElementById("hebrew-btn").addEventListener("click", extras);
-      document.getElementById("islamic-btn").addEventListener("click", extras);
-      document.getElementById("pers-btn").addEventListener("click", extras);
-    </script>
-    <script>
+      // Global consts for new DOM elements
       const newMonthField = document.getElementById("new-select-month");
       const newDayField = document.getElementById("new-select-day");
       const newStartYearField = document.getElementById(
@@ -542,39 +497,100 @@
       const newEndYearField = document.getElementById("new-select-end-year");
       const newWeekdayField = document.getElementById("new-select-weekday");
       const newSubmitButton = document.getElementById("new-submit-button");
+      const newResetButton = document.getElementById("new-reset-button");
       const newResultsTextField = document.getElementById("new-results-text");
 
+      // Function to search for matching years
       function experimentalSearch() {
+        // Consts for submitted values
         const submittedMonthIndex = newMonthField.selectedIndex;
         const submittedDay = newDayField.value;
         const submittedStartYear = newStartYearField.value;
         const submittedEndYear = newEndYearField.value;
         const submittedWeekday = newWeekdayField.value;
 
+        // Abort if any field has been left empty
+        if (!submittedDay || !submittedStartYear || !submittedEndYear) {
+          return;
+        }
+
+        // Abort if any submitted value is out of bounds
+        if (
+          submittedDay < 1 ||
+          submittedDay > 30 ||
+          submittedStartYear < 100 ||
+          submittedStartYear > 1400 ||
+          submittedEndYear < 100 ||
+          submittedEndYear > 1400
+        ) {
+          newResultsTextField.innerText =
+            "At least one submitted value was out of bounds!";
+          return;
+        }
+
+        // Abort if start year is later than end year
+        if (submittedStartYear > submittedEndYear) {
+          newResultsTextField.innerText =
+            "The start year is later than the end year…?";
+          return;
+        }
+
+        // Limit year range to 300 (technically 301 inclusive)
+        // Abort if this is bad
+        if (submittedEndYear - submittedStartYear > 300) {
+          newResultsTextField.innerText = "The year range is too large!";
+          return;
+        }
+
+        // Empty array to populate with results
         let resultsList = [];
 
-        document.islamic.month.selectedIndex = submittedMonthIndex;
-        document.islamic.day.value = submittedDay;
-
+        // Iterate over the desired inclusive range of years
         for (i = submittedStartYear; i <= submittedEndYear; i++) {
+          // Set hidden Islamic date values
+          // The month and day are reset each time, since they can fluctuate
           document.islamic.year.value = i;
+          document.islamic.month.selectedIndex = submittedMonthIndex;
+          document.islamic.day.value = submittedDay;
 
+          // Now that the hidden date is set, run the big calc function
           calcIslamic();
 
+          // Make sure the hidden month and day haven't been changed
+          // I'm not 100% sure this works
           if (
             document.islamic.month.selectedIndex === submittedMonthIndex &&
             document.islamic.day.value === submittedDay
           ) {
+            // If calculated weekday == submitted weekday
             if (document.gregorian.wday.value === submittedWeekday) {
+              // Push the year to the results array
               resultsList.push(i);
             }
           }
         }
 
-        newResultsTextField.innerText = resultsList.join(", ");
+        // Display results, if any
+        if (resultsList.length > 0) {
+          newResultsTextField.innerText = resultsList.join(", ");
+        } else {
+          newResultsTextField.innerText = "No matches were found.";
+        }
       }
 
+      // Function to clear all fields
+      function newReset() {
+        newMonthField.selectedIndex = 0;
+        newDayField.value = "";
+        newStartYearField.value = "";
+        newEndYearField.value = "";
+        newWeekdayField.selectedIndex = 0;
+        newResultsTextField.innerText = "…";
+      }
+
+      // Event listeners for new functions
       newSubmitButton.addEventListener("click", experimentalSearch);
+      newResetButton.addEventListener("click", newReset);
     </script>
   </body>
 </html>
