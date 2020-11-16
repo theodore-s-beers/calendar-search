@@ -516,8 +516,8 @@
         // Consts for submitted values
         const submittedMonthIndex = newMonthField.selectedIndex;
         const submittedDay = newDayField.value;
-        const submittedStartYear = newStartYearField.value;
-        const submittedEndYear = newEndYearField.value;
+        const submittedStartYear = Number(newStartYearField.value);
+        const submittedEndYear = Number(newEndYearField.value);
         const submittedWeekday = newWeekdayField.value;
 
         // Abort if any field has been left empty
