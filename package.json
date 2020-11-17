@@ -5,14 +5,12 @@
   "repository": "github:theodore-s-beers/calendar-search",
   "license": "MIT",
   "author": "Theo Beers",
-  "main": "./js/calendar.js",
+  "main": "./js/new-search.js",
   "scripts": {
-    "minify": "terser ./js/calendar.js --mangle --source-map --output ./js/calendar.min.js",
-    "standardize": "standard --fix ./js/calendar.js",
+    "standardize": "standard --fix ./js/new-search.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "standard": "^16.0.2",
-    "terser": "^5.4.0"
+    "standard": "^16.0.2"
   }
 }
