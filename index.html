@@ -32,11 +32,7 @@
     <div class="container">
       <h1>Experimental calendar search</h1>
       <div id="hidden">
-        <form
-          action="JavaScript:calcGregorian();"
-          id="gregorian"
-          name="gregorian"
-        >
+        <form id="gregorian" name="gregorian">
           <table>
             <tr>
               <td>
@@ -87,28 +83,14 @@
             </tr>
             <tr>
               <td>
-                <input
-                  id="greg-calc-btn"
-                  onclick="calcGregorian();"
-                  type="submit"
-                  value="Calculate"
-                />
+                <input id="greg-calc-btn" type="submit" value="Calculate" />
                 &ensp;
-                <input
-                  id="greg-today-btn"
-                  onclick="setDateToToday();calcGregorian();"
-                  type="button"
-                  value="Today"
-                />
+                <input id="greg-today-btn" type="button" value="Today" />
               </td>
             </tr>
           </table>
         </form>
-        <form
-          action="JavaScript:calcJulianCalendar();"
-          id="juliancalendar"
-          name="juliancalendar"
-        >
+        <form id="juliancalendar" name="juliancalendar">
           <table>
             <tr>
               <td>
@@ -159,17 +141,12 @@
             </tr>
             <tr>
               <td>
-                <input
-                  id="julian-btn"
-                  onclick="calcJulianCalendar();"
-                  type="submit"
-                  value="Calculate"
-                />
+                <input id="julian-btn" type="submit" value="Calculate" />
               </td>
             </tr>
           </table>
         </form>
-        <form action="JavaScript:calcHebrew();" id="hebrew" name="hebrew">
+        <form id="hebrew" name="hebrew">
           <table>
             <tr>
               <td>
@@ -213,17 +190,12 @@
             </tr>
             <tr>
               <td>
-                <input
-                  onclick="calcHebrew();"
-                  value="Calculate"
-                  type="submit"
-                  id="hebrew-btn"
-                />
+                <input value="Calculate" type="submit" id="hebrew-btn" />
               </td>
             </tr>
           </table>
         </form>
-        <form action="JavaScript:calcIslamic();" id="islamic" name="islamic">
+        <form id="islamic" name="islamic">
           <table>
             <tr>
               <td>
@@ -274,17 +246,12 @@
             </tr>
             <tr>
               <td>
-                <input
-                  id="islamic-btn"
-                  onclick="calcIslamic();"
-                  type="submit"
-                  value="Calculate"
-                />
+                <input id="islamic-btn" type="submit" value="Calculate" />
               </td>
             </tr>
           </table>
         </form>
-        <form action="JavaScript:calcPersiana();" id="persiana" name="persiana">
+        <form id="persiana" name="persiana">
           <table>
             <tr>
               <td>
@@ -335,12 +302,7 @@
             </tr>
             <tr>
               <td>
-                <input
-                  id="pers-btn"
-                  onclick="calcPersiana();"
-                  type="submit"
-                  value="Calculate"
-                />
+                <input id="pers-btn" type="submit" value="Calculate" />
               </td>
             </tr>
           </table>
@@ -466,17 +428,6 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/calendar.min.js"></script>
-    <script>
-      // Set current date on page load
-      setDateToToday();
-
-      // Not sure what this does
-      if ("" === location.search) {
-        calcGregorian();
-      } else {
-        presetDataToRequest(location.search.substring(1));
-      }
-    </script>
     <script src="./js/new-search.js"></script>
   </body>
 </html>
