@@ -1,0 +1,35 @@
+body {
+  margin: auto;
+  max-width: 860px;
+}
+h1 {
+  font-size: 210%;
+}
+h5 {
+  font-size: 115%;
+}
+p,
+li {
+  hyphens: auto;
+}
+.container {
+  margin-bottom: 1.3rem;
+  margin-top: 0.6rem;
+}
+#hidden {
+  display: none;
+}
+#new-results-card {
+  max-width: 24rem;
+}
+#new-select-day {
+  width: 5rem;
+}
+#new-select-end-year,
+#new-select-start-year {
+  width: 6rem;
+}
+#new-select-month,
+#new-select-weekday {
+  width: 10rem;
+}

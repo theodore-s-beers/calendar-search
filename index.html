@@ -25,28 +25,13 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="#" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <style>
-      body {
-        max-width: 860px;
-        margin: auto;
-      }
-      h1 {
-        font-size: 210%;
-      }
-      h5 {
-        font-size: 115%;
-      }
-      p,
-      li {
-        hyphens: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="container" style="margin-top: 0.6rem; margin-bottom: 1.3rem">
+    <div class="container">
       <h1>Experimental calendar search</h1>
-      <div style="display: none">
+      <div id="hidden">
         <form
           action="JavaScript:calcGregorian();"
           id="gregorian"
@@ -364,7 +349,7 @@
       <h5>For the following date in the Islamic calendar…</h5>
       <div class="form-group mb-2">
         <label for="new-select-month">Month</label>
-        <select class="form-control" id="new-select-month" style="width: 10rem">
+        <select class="form-control" id="new-select-month">
           <option value="1">Muharram</option>
           <option value="2">Safar</option>
           <option value="3">Rabi‘ I</option>
@@ -388,7 +373,6 @@
           max="30"
           min="1"
           value=""
-          style="width: 5rem"
         />
       </div>
       <h5>In the following <em>inclusive</em> range of years (AH)…</h5>
@@ -401,7 +385,6 @@
           max="1400"
           min="100"
           value=""
-          style="width: 6rem"
         />
       </div>
       <div class="form-group">
@@ -413,7 +396,6 @@
           max="1400"
           min="100"
           value=""
-          style="width: 6rem"
         />
       </div>
       <h5>
@@ -422,11 +404,7 @@
       </h5>
       <div class="form-group">
         <label for="new-select-weekday">Weekday</label>
-        <select
-          class="form-control"
-          id="new-select-weekday"
-          style="width: 10rem"
-        >
+        <select class="form-control" id="new-select-weekday">
           <option>Saturday</option>
           <option>Sunday</option>
           <option>Monday</option>
@@ -450,7 +428,7 @@
         Clear
       </button>
       <hr />
-      <div class="card border-success" style="max-width: 24rem">
+      <div class="card border-success" id="new-results-card">
         <div class="card-body text-success">
           <h5 class="card-title">Results</h5>
           <p class="card-text" id="new-results-text">…</p>
@@ -499,6 +477,6 @@
         presetDataToRequest(location.search.substring(1));
       }
     </script>
-    <script src="js/new-search.js"></script>
+    <script src="./js/new-search.js"></script>
   </body>
 </html>
