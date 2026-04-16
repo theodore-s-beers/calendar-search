@@ -1,12 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Experimental calendar search</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
     <meta
       name="description"
       content="Search for years in which a given date in the Islamic calendar fell on a given weekday"
@@ -14,10 +11,7 @@
     <meta content="Theo Beers" name="author" />
     <meta property="og:title" content="Experimental calendar search" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://www.theobeers.com/calendar-search/"
-    />
+    <meta property="og:url" content="https://www.theobeers.com/calendar-search/" />
     <meta
       property="og:image"
       content="https://www.theobeers.com/calendar-search/img/astrolog.jpg"
@@ -72,13 +66,7 @@
                   type="text"
                   value=""
                 />
-                <input
-                  aria-label="Weekday"
-                  name="wday"
-                  readonly="readonly"
-                  type="text"
-                  value=""
-                />
+                <input aria-label="Weekday" name="wday" readonly="readonly" type="text" value="" />
               </td>
             </tr>
             <tr>
@@ -130,13 +118,7 @@
                   type="text"
                   value=""
                 />
-                <input
-                  aria-label="Weekday"
-                  name="wday"
-                  readonly="readonly"
-                  type="text"
-                  value=""
-                />
+                <input aria-label="Weekday" name="wday" readonly="readonly" type="text" value="" />
               </td>
             </tr>
             <tr>
@@ -150,13 +132,7 @@
           <table>
             <tr>
               <td>
-                <input
-                  aria-label="Hebrew year"
-                  name="year"
-                  id="heb-year"
-                  type="number"
-                  value=""
-                />
+                <input aria-label="Hebrew year" name="year" id="heb-year" type="number" value="" />
                 <select name="month" aria-label="Hebrew month">
                   <option label="Nisan" value="1"></option>
                   <option label="Iyar" value="2"></option>
@@ -328,14 +304,7 @@
       </div>
       <div class="form-group">
         <label for="new-select-day">Day (1–30)</label>
-        <input
-          type="number"
-          class="form-control"
-          id="new-select-day"
-          max="30"
-          min="1"
-          value=""
-        />
+        <input type="number" class="form-control" id="new-select-day" max="30" min="1" value="" />
       </div>
       <h5>In the following <em>inclusive</em> range of years (AH)…</h5>
       <div class="form-group mb-2">
@@ -361,8 +330,7 @@
         />
       </div>
       <h5>
-        Return years in which that date is calculated as occurring on the
-        following day of the week…
+        Return years in which that date is calculated as occurring on the following day of the week…
       </h5>
       <div class="form-group">
         <label for="new-select-weekday">Weekday</label>
@@ -376,19 +344,8 @@
           <option>Friday</option>
         </select>
       </div>
-      <button
-        type="button"
-        class="btn btn-primary mb-1 mr-3"
-        id="new-submit-button"
-      >
-        Submit</button
-      ><button
-        type="button"
-        class="btn btn-secondary mb-1"
-        id="new-reset-button"
-      >
-        Clear
-      </button>
+      <button type="button" class="btn btn-primary mb-1 mr-3" id="new-submit-button">Submit</button
+      ><button type="button" class="btn btn-secondary mb-1" id="new-reset-button">Clear</button>
       <hr />
       <div class="card border-success" id="new-results-card">
         <div class="card-body text-success">
@@ -400,27 +357,24 @@
       <h4>Caveats</h4>
       <ul class="list-group">
         <li class="list-group-item">
-          This is based on standard algorithmic date calculation/conversion. It
-          should be accurate, as far as such things go; but the user is advised
-          to allow a margin of plus or minus one day, <em>particularly</em> with
-          regard to the weekday associated with a given date. If, for example,
-          you're looking for years in which 5 Rajab fell on a Thursday, you
-          should probably run queries for Wednesday and Friday, as well.
+          This is based on standard algorithmic date calculation/conversion. It should be accurate,
+          as far as such things go; but the user is advised to allow a margin of plus or minus one
+          day, <em>particularly</em> with regard to the weekday associated with a given date. If,
+          for example, you're looking for years in which 5 Rajab fell on a Thursday, you should
+          probably run queries for Wednesday and Friday, as well.
         </li>
         <li class="list-group-item">
-          Yes, the number of positive results will increase due to the margin of
-          error. I'm not really sure how valuable this tool will be. But if
-          you're working with a source that mentions a month, day, and weekday
-          for an event, and you're trying to identify possible years from a
-          range that isn't too large, it <em>can</em> be helpful to know which
-          options fit best.
+          Yes, the number of positive results will increase due to the margin of error. I'm not
+          really sure how valuable this tool will be. But if you're working with a source that
+          mentions a month, day, and weekday for an event, and you're trying to identify possible
+          years from a range that isn't too large, it <em>can</em> be helpful to know which options
+          fit best.
         </li>
         <li class="list-group-item">
-          Please note that the difference between the start and end years cannot
-          exceed 300. (Technically, since the range is treated inclusively, the
-          maximum number of years that can be searched at once is 301.) I wanted
-          to set some reasonable limit, due to the incredibly inefficient way in
-          which the script has been implemented.
+          Please note that the difference between the start and end years cannot exceed 300.
+          (Technically, since the range is treated inclusively, the maximum number of years that can
+          be searched at once is 301.) I wanted to set some reasonable limit, due to the incredibly
+          inefficient way in which the script has been implemented.
         </li>
       </ul>
     </div>

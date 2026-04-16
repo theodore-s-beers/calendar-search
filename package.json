@@ -1,16 +1,19 @@
 {
   "name": "calendar-search",
   "version": "0.1.0",
+  "private": true,
   "description": "Experimental calendar search",
-  "repository": "github:theodore-s-beers/calendar-search",
   "license": "MIT",
   "author": "Theo Beers",
+  "repository": "github:theodore-s-beers/calendar-search",
   "main": "./js/new-search.js",
   "scripts": {
-    "standardize": "standard --fix ./js/new-search.js",
+    "format": "oxfmt",
+    "lint": "oxfmt --check && oxlint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "oxfmt": "^0.45.0",
+    "oxlint": "^1.60.0"
   }
 }
